@@ -1,6 +1,6 @@
 #!/bin/bash
 
-GITHUB="https://github.com/tuxisawesome/Gentoo-Installer/raw/master"
+GITHUB="https://github.com/tuxisawesome/WalterOS-Linux/raw/master"
 
 NAME="WalterOS Linux Installer (BETA)"
 ####### USER CONFIGS
@@ -144,6 +144,14 @@ while true; do
         ntpdate -b time.ien.it > /dev/null 2>&1 && hwclock -w
 
         # CLEAN THE DISK
+        echo $DISK
+        echo $ESP
+        echo $BOOT
+        echo $ROOT
+        echo ""
+        echo ""
+        echo $TYPE
+        echo $ROOT_PWD
         dd if=/dev/zero of="${DISK}" bs=512 count=1 conv=notrunc > /dev/null 2>&1 || die
 
         cd /tmp/
